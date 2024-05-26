@@ -1,19 +1,21 @@
 package src;
 
 public class Livro {
-    private int codigo;
     private Titulo titulo;
 
     public Livro(int codigo) {
-        this.codigo = codigo;
-        this.titulo = TituloService.obterTitulo(codigo);
+        // Cria uma instância de Titulo associada ao livro
+        this.titulo = new Titulo(codigo);
     }
 
-    public int verPrazo() {
-        return TituloService.obterPrazo(this.titulo);
+    // Obtém o prazo de devolução do livro
+    public int obterPrazoDevolucao() {
+        return titulo.getPrazo();
     }
 
-    public boolean verificaLivro() {
-        return (this.codigo == 3);
-    } 
+    // Verifica se o livro é válido para empréstimo
+    public boolean isValidoParaEmprestimo() {
+        // Lógica para determinar se o livro é válido (por exemplo, com base no código)
+        return (this.titulo.getCodigo() != 3);
+    }
 }

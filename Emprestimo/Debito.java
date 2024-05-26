@@ -1,12 +1,17 @@
-package src;
+public class Debito {
 
-public class VerificadorDebito {
-    public boolean verificarDebito(int codigoAluno) {
-        // Lógica para verificar se o aluno possui débito
-        if (codigoAluno == 4) {
-            return false;
-        } else {
-            return true;
-        }
-    }
+	private int codigoAluno;
+
+	public Debito(int aluno){
+		this.codigoAluno =aluno;
+	}
+
+	public Integer getCodigoAluno(){
+		return this.codigoAluno;
+	}
+
+	public void setCodigoAluno(Integer codigoAluno){
+		this.codigoAluno = codigoAluno;
+	}
+
 }
